@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetail">
+
+    <ImageView
+        android:id="@+id/movie_image"
+        android:layout_width="0dp"
+        android:layout_height="194dp"
+        android:contentDescription="@string/movie_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/movie_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movie_image"
+        tools:text="A lista de Schindler" />
+
+    <TextView
+        android:id="@+id/movie_relevance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="@id/movie_title"
+        app:layout_constraintTop_toBottomOf="@id/movie_title"
+        tools:text="86% relevante" />
+
+    <TextView
+        android:id="@+id/movie_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toRightOf="@id/movie_relevance"
+        app:layout_constraintTop_toTopOf="@id/movie_relevance"
+        tools:text="1993" />
+
+    <TextView
+        android:id="@+id/movie_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toRightOf="@id/movie_year"
+        app:layout_constraintTop_toTopOf="@id/movie_relevance"
+        tools:text="3h 15m" />
+
+    <TextView
+        android:id="@+id/movie_phrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/movie_relevance"
+        app:layout_constraintTop_toBottomOf="@id/movie_relevance"
+        android:layout_marginTop="16dp"
+        tools:text="A lista... é vida." />
+
+    <TextView
+        android:id="@+id/movie_synopsis_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/movie_relevance"
+        app:layout_constraintTop_toBottomOf="@id/movie_phrase"
+        android:layout_marginTop="16dp"
+        android:text="@string/synopsis"
+        android:textStyle="bold"
+      />
+
+    <TextView
+        android:id="@+id/movie_synopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="start"
+        android:paddingRight="24dp"
+        android:textAlignment="viewStart"
+        app:layout_constraintLeft_toLeftOf="@id/movie_synopsis_title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/movie_synopsis_title"
+        app:layout_constraintTop_toBottomOf="@id/movie_synopsis_title"
+        tools:text="@tools:sample/lorem/random" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
