@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MoviesList">
+    tools:context=".ui.main.view.MoviesList">
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/movies_list"
+        android:id="@+id/moviesList"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clipToPadding="false"
@@ -23,7 +23,7 @@
         tools:visibility="visible" />
 
     <ProgressBar
-        android:id="@+id/progress_circular"
+        android:id="@+id/loadingIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
