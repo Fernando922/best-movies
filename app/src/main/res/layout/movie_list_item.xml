@@ -35,7 +35,7 @@
         tools:text="Um sonho de liberdade" />
 
     <TextView
-        android:id="@+id/movieCategories"
+        android:id="@+id/movieGenres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

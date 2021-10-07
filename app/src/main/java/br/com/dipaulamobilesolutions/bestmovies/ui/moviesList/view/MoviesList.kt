@@ -32,10 +32,10 @@ class MoviesList : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setActionBarTitle()
         setContentView(R.layout.activity_movies_list)
         setupViewModel()
         setupObserver()
-        setActionBarTitle()
     }
 
     private fun setActionBarTitle() {
