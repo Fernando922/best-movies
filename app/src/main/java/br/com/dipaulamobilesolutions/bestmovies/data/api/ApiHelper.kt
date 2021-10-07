@@ -2,7 +2,7 @@ package br.com.dipaulamobilesolutions.bestmovies.data.api
 
 class ApiHelper(private val apiService: ApiService) {
 
-    fun getTopRatedMovies() = apiService.getTopRatedMovies()
+    fun getTopRatedMovies(page: Int) = apiService.getTopRatedMovies(page)
 
     fun getGenres() = apiService.getGenres()
 

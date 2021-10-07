@@ -1,15 +1,12 @@
 package br.com.dipaulamobilesolutions.bestmovies.data.api
 
-import br.com.dipaulamobilesolutions.bestmovies.data.model.Genre
-import br.com.dipaulamobilesolutions.bestmovies.data.model.MovieDetail
-import br.com.dipaulamobilesolutions.bestmovies.data.model.TopRatedMovie
-import br.com.dipaulamobilesolutions.bestmovies.data.model.TopRatedMoviesResponse
+import br.com.dipaulamobilesolutions.bestmovies.data.model.*
 import io.reactivex.Single
 
 interface ApiService {
-    fun getGenres(): Single<List<Genre>>
+    fun getGenres(): Single<GenreResponse>
 
-    fun getTopRatedMovies(): Single<TopRatedMoviesResponse>
+    fun getTopRatedMovies(page: Int): Single<TopRatedMoviesResponse>
 
     fun getMovieDetail(id: String): Single<MovieDetail>
 }

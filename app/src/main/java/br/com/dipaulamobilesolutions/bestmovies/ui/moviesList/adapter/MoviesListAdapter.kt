@@ -1,4 +1,4 @@
-package br.com.dipaulamobilesolutions.bestmovies.ui.main.adapter
+package br.com.dipaulamobilesolutions.bestmovies.ui.moviesList.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -7,17 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.dipaulamobilesolutions.bestmovies.R
+import br.com.dipaulamobilesolutions.bestmovies.data.model.Genre
 import br.com.dipaulamobilesolutions.bestmovies.data.model.TopRatedMovie
 import br.com.dipaulamobilesolutions.bestmovies.ui.movieInfo.view.MovieInfo
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.list_item.view.*
+import kotlinx.android.synthetic.main.movie_list_item.view.*
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class MainAdapter(
+class MoviesListAdapter(
     private val topRatedMovies: ArrayList<TopRatedMovie>,
-    private val context: Context
-) : RecyclerView.Adapter<MainAdapter.DataViewHolder>() {
+    private val genres: List<Genre>
+) : RecyclerView.Adapter<MoviesListAdapter.DataViewHolder>() {
 
     class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(topRatedMovie: TopRatedMovie) {
@@ -35,7 +36,7 @@ class MainAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
         return DataViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.list_item, parent, false
+                R.layout.movie_list_item, parent, false
             )
         )
     }

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import br.com.dipaulamobilesolutions.bestmovies.ui.main.view.MoviesList
+import br.com.dipaulamobilesolutions.bestmovies.ui.moviesList.view.MoviesList
 
 class Splash : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

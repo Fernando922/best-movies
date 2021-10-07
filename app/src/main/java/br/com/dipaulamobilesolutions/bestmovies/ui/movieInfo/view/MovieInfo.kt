@@ -24,12 +24,15 @@ class MovieInfo : AppCompatActivity() {
     private lateinit var movieInfoViewModel: MovieInfoViewModel
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_info)
+        addListeners()
         getMovieId()
+    }
+
+    private fun addListeners() {
+        backButton.setOnClickListener { finish() }
     }
 
     private fun getMovieId() {
@@ -39,11 +42,6 @@ class MovieInfo : AppCompatActivity() {
         }
         setupObserver()
     }
-
-    private fun setActionBarTitle(movieTitle: String) {
-        supportActionBar?.title = movieTitle
-    }
-
 
 
     private fun setupViewModel(movieId: String) {
@@ -71,7 +69,6 @@ class MovieInfo : AppCompatActivity() {
 
 
     private fun updateUI(movieDetail: MovieDetail) {
-        updateScreenTitle(movieDetail.title)
 
         val date = LocalDate.parse(movieDetail.releaseDate)
         val formatter = DateTimeFormatter.ofPattern("yyyy")
@@ -100,9 +97,6 @@ class MovieInfo : AppCompatActivity() {
 
     }
 
-    private fun updateScreenTitle(movieTitle: String) {
-        setActionBarTitle(movieTitle)
-    }
 
 
 }
