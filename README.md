@@ -25,6 +25,7 @@ Project developed using api https://developers.themoviedb.org
 
 - [Android](https://www.android.com/intl/pt-BR_br/)
 - [Kotlin](https://kotlinlang.org/)
+- [MVVM](https://blog.mindorks.com/mvvm-architecture-android-tutorial-for-beginners-step-by-step-guide)
 
 ## :thinking: How to use?
 
