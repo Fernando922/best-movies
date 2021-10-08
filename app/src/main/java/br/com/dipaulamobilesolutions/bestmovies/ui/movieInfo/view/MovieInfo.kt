@@ -54,7 +54,7 @@ class MovieInfo : AppCompatActivity() {
 
     private fun setupObserver() {
         movieInfoViewModel.getMovieDetail().observe(this, Observer {
-            when(it.status){
+            when (it.status) {
                 Status.SUCCESS -> {
                     loadView.visibility = View.GONE
                     it.data?.let { movieDetail -> updateUI(movieDetail) }
@@ -70,33 +70,42 @@ class MovieInfo : AppCompatActivity() {
 
     private fun updateUI(movieDetail: MovieDetail) {
 
-        val date = LocalDate.parse(movieDetail.releaseDate)
-        val formatter = DateTimeFormatter.ofPattern("yyyy")
-        movieYear.text = date.format(formatter)
 
-        Glide.with(movieImage.context)
-            .load("https://image.tmdb.org/t/p/w500${movieDetail.posterPath}")
-            .into(movieImage)
-
-        movieTitle.text =  movieDetail.title
-
-
-        val hours = movieDetail.runtime / 60
-        val minutes = movieDetail.runtime % 60
-        movieDuration.text = "${hours}h ${minutes}m"
-
-
-        val voteAverage = movieDetail.voteAverage*10
-        val formatAverage = DecimalFormat("0.#")
-        movieRelevance.text = "${formatAverage.format(voteAverage)}% relevante"
-
-
-
+        movieTitle.text = movieDetail.title
         moviePhrase.text = movieDetail.tagline
         movieSynopsis.text = movieDetail.overview
 
+
+        renderMovieImage(movieDetail)
+        setupMovieDuration(movieDetail)
+        setupMovieDate(movieDetail)
+        setupMovieRelevance(movieDetail)
+
     }
 
+    private fun setupMovieRelevance(movieDetail: MovieDetail) {
+        val voteAverage = movieDetail.voteAverage * 10
+        val formatAverage = DecimalFormat("0.#")
+        movieRelevance.text = "${formatAverage.format(voteAverage)}% relevante"
+    }
+
+    private fun setupMovieDuration(movieDetail: MovieDetail) {
+        val hours = movieDetail.runtime / 60
+        val minutes = movieDetail.runtime % 60
+        movieDuration.text = "${hours}h ${minutes}m"
+    }
+
+    private fun renderMovieImage(movieDetail: MovieDetail) {
+        Glide.with(movieImage.context)
+            .load("https://image.tmdb.org/t/p/w500${movieDetail.posterPath}")
+            .into(movieImage)
+    }
+
+    private fun setupMovieDate(movieDetail: MovieDetail) {
+        val date = LocalDate.parse(movieDetail.releaseDate)
+        val formatter = DateTimeFormatter.ofPattern("yyyy")
+        movieYear.text = date.format(formatter)
+    }
 
 
 }
